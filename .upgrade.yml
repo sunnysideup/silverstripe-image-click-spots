@@ -1,0 +1,4 @@
+mappings:
+  ImageClickSpotsContentControllerEXT: Sunnysideup\ImageClickSpots\Extension\ImageClickSpotsContentControllerEXT
+  ImageClickSpotsSTE: Sunnysideup\ImageClickSpots\Extension\ImageClickSpotsSTE
+  ImageClickSpotsSiteConfigDE: Sunnysideup\ImageClickSpots\Extension\ImageClickSpotsSiteConfigDE
