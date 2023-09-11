@@ -1,14 +1,17 @@
 <?php
 
-namespace Sunnysideup\ImageClickSpots\Modeel;
+namespace Sunnysideup\ImageClickSpots\Model;
+
+use JonoM\ImageCoord\ImageCoordField;
+use SilverStripe\ORM\DataObject;
 
 class DataPoint extends DataObject
 {
+    private static $table_name = 'Sunnysideup_clickspots_DataPoint';
+
     private static $db = [
        'Title' => 'Varchar',
        'Description' => 'HTMLText',
-       'XCoordinate' => 'Float', //todo: check if this works or try Varchar
-       'YCoordinate' => 'Float',
     ];
 
     private static $has_one = [
@@ -25,8 +28,8 @@ class DataPoint extends DataObject
                $xFieldName = 'XCoordinate',
                $yFieldName = 'YCoordinate',
                $imageURL = $this->Parent()->DataPointImage()->Link(),
-               $width = $this->Parent()->DataPointImage()->width(),
-               $height = $this->Parent()->DataPointImage()->height(),
+               $width = $this->Parent()->DataPointImage()->getWidth(),
+               $height = $this->Parent()->DataPointImage()->getHeight(),
                $cssGrid = true
            )
        );
